@@ -3,8 +3,14 @@
 # SNAPSHOTS_REPO
 # REPO_
 language: java
+
 jdk:
   - oraclejdk8
   - oraclejdk7
+
+before_script:
+  - echo "REPO_USER_ID  = ${REPO_USER_ID}"
+  - echo "RELEASES_REPO = ${RELEASES_REPO}"
+
 after_success:
-  - mvn clean deploy --settings settings.xml
+  - mvn deploy --settings settings.xml

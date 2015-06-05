@@ -14,12 +14,15 @@
 		<developerConnection>scm:git@github.com:ydewit/awslogs-logback-encoder.git</developerConnection>
 	</scm>
 
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
 	<distributionManagement>
 		<repository>
 			<id>releases-repo</id>
 			<name>Releases</name>
 			<url>${env.RELEASES_REPO}</url>
-			<uniqueVersion>false</uniqueVersion>
 		</repository>
 		<snapshotRepository>
 			<id>snapshots-repo</id>
@@ -28,6 +31,14 @@
 			<uniqueVersion>false</uniqueVersion>
 		</snapshotRepository>
 	</distributionManagement>
+
+	<repositories>
+		<repository>
+			<id>spring-repo</id>
+			<name>Spring Maven repository</name>
+			<url>http://repo.spring.io/release</url>
+		</repository>
+	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -53,4 +64,14 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
+
+	<build>
+		<extensions>
+			<extension>
+				<groupId>org.springframework.build</groupId>
+				<artifactId>aws-maven</artifactId>
+				<version>5.0.0.RELEASE</version>
+			</extension>
+		</extensions>
+	</build>
 </project>
