@@ -4,15 +4,30 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.frevvo</groupId>
-	<artifactId>awslogs-logback-encoder</artifactId>
+	<artifactId>logback-json-encoder</artifactId>
 	<version>0.1.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>JSON Logback Encoder for AWS CloudWatch Logs</name>
+	<name>A JSON encoder for Logback</name>
 
 	<scm>
 		<developerConnection>scm:git@github.com:ydewit/awslogs-logback-encoder.git</developerConnection>
 	</scm>
+
+	<distributionManagement>
+		<repository>
+			<id>releases-repo</id>
+			<name>Releases</name>
+			<url>${env.RELEASES_REPO}</url>
+			<uniqueVersion>false</uniqueVersion>
+		</repository>
+		<snapshotRepository>
+			<id>snapshots-repo</id>
+			<name>Snapshots</name>
+			<url>${env.SNAPSHOTS_REPO}</url>
+			<uniqueVersion>false</uniqueVersion>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<dependencies>
 		<dependency>

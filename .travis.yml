@@ -1,4 +1,10 @@
+# Required environment variables:
+# RELEASES_REPO
+# SNAPSHOTS_REPO
+# REPO_
 language: java
 jdk:
   - oraclejdk8
   - oraclejdk7
+after_success:
+  - mvn clean deploy -q --settings settings.xml
