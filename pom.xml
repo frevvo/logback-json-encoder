@@ -11,7 +11,9 @@
 	<name>A JSON encoder for Logback</name>
 
 	<scm>
-		<developerConnection>scm:git@github.com:ydewit/awslogs-logback-encoder.git</developerConnection>
+		<connection>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</connection>
+		<url>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</url>
+		<developerConnection>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</developerConnection>
 	</scm>
 
 	<properties>
@@ -73,26 +75,10 @@
 				<version>5.0.0.RELEASE</version>
 			</extension>
 		</extensions>
-<!-- 		
-		<plugins>
-			<plugin>
-				<artifactId>maven-assembly-plugin</artifactId>
-				<configuration>
-					<descriptor>
-						${basedir}/src/main/assembly/zip-with-dependencies.xml
-					</descriptor>
-				</configuration>
-				<executions>
-					<execution>
-						<id>make-assembly</id>
-						<phase>package</phase>
-						<goals>
-							<goal>single</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
- -->
+		<!-- <plugins> <plugin> <artifactId>maven-assembly-plugin</artifactId> 
+			<configuration> <descriptor> ${basedir}/src/main/assembly/zip-with-dependencies.xml 
+			</descriptor> </configuration> <executions> <execution> <id>make-assembly</id> 
+			<phase>package</phase> <goals> <goal>single</goal> </goals> </execution> 
+			</executions> </plugin> </plugins> -->
 	</build>
 </project>
