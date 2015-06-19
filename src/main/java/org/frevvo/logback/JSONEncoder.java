@@ -200,7 +200,7 @@ public class JSONEncoder extends EncoderBase<ILoggingEvent> {
 						writeMdcObject(gen, event.getMDCPropertyMap());
 					else
 						writeMdcField(gen, mdcProp, event.getMDCPropertyMap()
-								.getOrDefault(mdcProp, null));
+								.get(mdcProp));
 					return;
 				} else if ("CONTEXT".equals(var)) {
 					String contextProp = m.group(3);
