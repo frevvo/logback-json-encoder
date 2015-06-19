@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>org.frevvo</groupId>
 	<artifactId>logback-json-encoder</artifactId>
-	<version>0.3-SNAPSHOT</version>
+	<version>0.3</version>
 	<packaging>jar</packaging>
 
 	<name>A JSON encoder for Logback</name>
@@ -13,8 +14,8 @@
 		<connection>scm:git:git@github.com:frevvo/logback-json-encoder.git</connection>
 		<url>scm:git:git@github.com:frevvo/logback-json-encoder.git</url>
 		<developerConnection>scm:git:git@github.com:frevvo/logback-json-encoder.git</developerConnection>
-	  <tag>HEAD</tag>
-  </scm>
+		<tag>HEAD</tag>
+	</scm>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -75,6 +76,15 @@
 				<version>5.0.0.RELEASE</version>
 			</extension>
 		</extensions>
+		<plugins>
+			<plugin>
+				<artifactId>maven-scm-plugin</artifactId>
+				<version>1.9.4</version>
+				<configuration>
+					<tag>${project.artifactId}-${project.version}</tag>
+				</configuration>
+			</plugin>
+		</plugins>
 		<!-- <plugins> <plugin> <artifactId>maven-assembly-plugin</artifactId> 
 			<configuration> <descriptor> ${basedir}/src/main/assembly/zip-with-dependencies.xml 
 			</descriptor> </configuration> <executions> <execution> <id>make-assembly</id> 
