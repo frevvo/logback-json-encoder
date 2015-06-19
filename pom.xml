@@ -11,9 +11,9 @@
 	<name>A JSON encoder for Logback</name>
 
 	<scm>
-		<connection>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</connection>
-		<url>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</url>
-		<developerConnection>scm:git:git@github.com:frevvo/awslogs-logback-encoder.git</developerConnection>
+		<connection>scm:git:git@github.com:frevvo/logback-json-encoder.git</connection>
+		<url>scm:git:git@github.com:frevvo/logback-json-encoder.git</url>
+		<developerConnection>scm:git:git@github.com:frevvo/logback-json-encoder.git</developerConnection>
 	</scm>
 
 	<properties>
