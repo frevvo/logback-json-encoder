@@ -102,6 +102,7 @@ public class JSONEncoder extends EncoderBase<ILoggingEvent> {
 	}
 
 	public void doEncode(ILoggingEvent event) throws IOException {
+		long l = System.nanoTime();
 		if (layoutNode != null) {
 			JsonGenerator generator = JSON_FACTORY.createGenerator(
 					outputStream, JsonEncoding.UTF8);
@@ -116,6 +117,8 @@ public class JSONEncoder extends EncoderBase<ILoggingEvent> {
 			if (isImmediateFlush())
 				generator.flush();
 		}
+		l = System.nanoTime() - l;
+		System.out.println("==> " + l);
 	}
 
 	private void encodeJson(JsonParser parser, JsonGenerator generator,
@@ -291,7 +294,10 @@ public class JSONEncoder extends EncoderBase<ILoggingEvent> {
 
 	private final void writeMarkerField(JsonGenerator gen, ILoggingEvent event)
 			throws IOException {
-		gen.writeString(event.getMarker().getName());
+		String value = getDefaultFieldValue();
+		if (event.getMarker() != null)
+			value = event.getMarker().getName();
+		gen.writeString(value);
 	}
 
 	private final void writeMessageField(JsonGenerator gen, ILoggingEvent event)
