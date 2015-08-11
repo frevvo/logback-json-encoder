@@ -1,0 +1,26 @@
+<assembly>
+	<id>bundle</id>
+	<formats>
+		<format>zip</format>
+	</formats>
+	<includeBaseDirectory>false</includeBaseDirectory>
+	<dependencySets>
+		<dependencySet>
+			<unpack>false</unpack>
+			<scope>runtime</scope>
+			<excludes>
+				<exclude>com.google.collections:*</exclude>
+				<exclude>com.google.gdata:*</exclude>
+			</excludes>
+		</dependencySet>
+	</dependencySets>
+	<fileSets>
+		<fileSet>
+			<directory>target</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>${artifact.artifactId}-${artifact.version}-javadoc.jar</include>
+			</includes>
+		</fileSet>  
+	</fileSets>
+</assembly>
